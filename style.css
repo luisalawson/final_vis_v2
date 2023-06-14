@@ -60,15 +60,17 @@ body {
   }
   
   /* Estilo para los títulos de la tabla */
-  .table th {
-    font-weight: 700;
-    color: #1DB954; /* Verde de Spotify */
-  }
-  
-  /* Estilo para el contenido de la tabla */
-  /* Estilo para el contenido de la tabla */
+.table th {
+  font-weight: 700;
+  color: #1DB954; /* Verde de Spotify */
+  font-size: 30px; /* Tamaño de fuente grande */
+}
+
+/* Estilo para el contenido de la tabla */
 .table td {
-  font-weight: 400;
-  color: #333; /* Color de texto oscuro */
-  font-family: "Gotham Medium", sans-serif; /* Fuente Gotham */
+  font-weight: 900;
+  color: #727272; /* Color de texto oscuro */
+  text-align: center; /* Centrar números */
+  font-size: 30px; /* Tamaño de fuente grande */
+  font-family: "Gotham", sans-serif; /* Fuente Gotham */
 }
