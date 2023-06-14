@@ -1,152 +1,58 @@
-d3.csv('datos/datos_actualizados_LUISA.csv', d3.autoType).then(data => {
-  function getImageUrl(artistName) {
-    if (artistName === "WOS") {
-      return "imagenes/wos.jpg";
-    } 
-  }
+d3.csv('datos/datos_merge.csv', d3.autoType).then(data => {
+  const groupedData = d3.group(data, d => d.Nombre); // Agrupa los datos por 'Nombre'
 
-  const artistCounts = d3.rollup(
-    data,
-    v => v.length,
-    d => d.artistName
-  );
+  const charts = Array.from(groupedData.entries()).map(([nombre, grupo]) => {
+    const artistSums = d3.rollup(
+      grupo,
+      v => d3.sum(v, d => d.msPlayed) / 3600000, // Convierte los ms a horas
+      d => {
+        // Reemplaza el nombre del artista "Julie and the phantoms caste" por "Julie & cast"
+        if (d.artistName === "Julie and the Phantoms Cast") {
+          return "Julie & cast";
+        } else {
+          return d.artistName;
+        }
+      }
+    );
 
-  const aggregatedData = Array.from(artistCounts, ([artistName, count]) => ({ artistName, count }));
-  const top5Artists = aggregatedData
-    .sort((a, b) => b.count - a.count)
-    .slice(0, 5);
+    const aggregatedData = Array.from(artistSums, ([artistName, sum]) => ({ artistName, sum }));
+    const top5Artists = aggregatedData
+      .sort((a, b) => b.sum - a.sum)
+      .slice(0, 5);
 
-  const colorScale = d3.scaleOrdinal()
-    .domain(top5Artists.map(d => d.artistName))
-    .range(['#6823D3', '#E4E4E4', '#E4E4E4', '#E4E4E4', '#E4E4E4']);
+    const colorScale = d3.scaleOrdinal()
+      .domain(top5Artists.map(d => d.artistName))
+      .range(['#1DB954', '#E4E4E4', '#E4E4E4', '#E4E4E4', '#E4E4E4']);
 
-  const chart = Plot.plot({
-    style: {
-      fontSize: 10,
-      backgroundColor:'#f9f9f9',
-    },
-    width: 650, // Aumenta el ancho del gráfico
-    height: 400, // Aumenta la altura del gráfico
-    font: 'Poppins', // Establece la fuente a Poppins
-    y:{domain:[0,1100]},
-    marks: [
-      Plot.barY(top5Artists, {
-        x: 'artistName',
-        y: 'count',
-        sort: { x: "y", reverse: true },
-        fill: d => colorScale(d.artistName),
-      }),
-      Plot.image(top5Artists, {
-        x: d => d.artistName,
-        y: d => d.count-2.1, // Ajusta la posición vertical de las imágenes
-        src: d => getImageUrl(d.artistName),
-        height: 104, // Ajusta la altura de las imágenes
-        anchor: 'top', // Ancla las imágenes al centro
-      }),
-    ],
+    const chart = Plot.plot({
+      style: {
+        fontSize: 20,
+        marginBottom: 20,
+      },
+      width: 1000, // Ajusta el ancho del gráfico según tus necesidades
+      height: 800, // Ajusta la altura del gráfico según tus necesidades
+      font: 'Poppins', // Establece la fuente a Poppins
+      y: { domain: [0, 35] },
+      x:{label:''}
+      ,
+      marks: [
+        Plot.barY(top5Artists, {
+          x: 'artistName',
+          y: 'sum',
+          sort: { x: "y", reverse: true },
+          fill: d => colorScale(d.artistName),
+        }),
+      ],
+    });
+
+    return chart;
   });
 
-  d3.select('#chart_luisa_top_artistas').append(() => chart);
-});
+  const container = d3.select('#chart_top_artistas')
+    .style('display', 'flex')
+    .style('gap', '20px'); // Espacio entre los gráficos
 
-d3.csv('datos/datos_actualizados_OLIVIA.csv', d3.autoType).then(data => {
-  function getImageUrl(artistName) {
-    if (artistName === "WOS") {
-      return "imagenes/wos.jpg";
-    }
-  }
-
-  const artistCounts = d3.rollup(
-    data,
-    v => v.length,
-    d => d.artistName
-  );
-
-  const aggregatedData = Array.from(artistCounts, ([artistName, count]) => ({ artistName, count }));
-  const top5Artists = aggregatedData
-    .sort((a, b) => b.count - a.count)
-    .slice(0, 5);
-
-  const colorScale = d3.scaleOrdinal()
-    .domain(top5Artists.map(d => d.artistName))
-    .range(['#D32373', '#E4E4E4', '#E4E4E4', '#E4E4E4', '#E4E4E4']);
-
-  const chart = Plot.plot({
-    style: {
-      fontSize: 10,
-      backgroundColor:'#f9f9f9',
-    },
-    width: 650, // Aumenta el ancho del gráfico
-    height: 400, // Aumenta la altura del gráfico
-    font: 'Poppins', // Establece la fuente a Poppins
-    y:{domain:[0,1100] },
-    marks: [
-      Plot.barY(top5Artists, {
-        x: 'artistName',
-        y: 'count',
-        sort: { x: "y", reverse: true },
-        fill: d => colorScale(d.artistName),
-      }),
-      Plot.image(top5Artists, {
-        x: d => d.artistName,
-        y: d => d.count-2.1, // Ajusta la posición vertical de las imágenes
-        src: d => getImageUrl(d.artistName),
-        height: 104, // Ajusta la altura de las imágenes
-        anchor: 'top', // Ancla las imágenes al centro
-      }),
-    ],
+  charts.forEach(chart => {
+    container.append(() => chart);
   });
-
-  d3.select('#chart_olivia_top_artistas').append(() => chart);
-});
-
-d3.csv('datos/datos_actualizados_SOLVA.csv', d3.autoType).then(data => {
-  function getImageUrl(artistName) {
-    if (artistName === "Anson Seabra") {
-      return "imagenes/anson.jpeg";
-    } 
-  }
-
-  const artistCounts = d3.rollup(
-    data,
-    v => v.length,
-    d => d.artistName
-  );
-
-  const aggregatedData = Array.from(artistCounts, ([artistName, count]) => ({ artistName, count }));
-  const top5Artists = aggregatedData
-    .sort((a, b) => b.count - a.count)
-    .slice(0, 5);
-
-  const colorScale = d3.scaleOrdinal()
-    .domain(top5Artists.map(d => d.artistName))
-    .range(['#23B0D3', '#E4E4E4', '#E4E4E4', '#E4E4E4', '#E4E4E4']);
-
-  const chart = Plot.plot({
-    style: {
-      fontSize: 10,
-      backgroundColor:'#f9f9f9',
-    },
-    width: 650, // Aumenta el ancho del gráfico
-    height: 400, // Aumenta la altura del gráfico
-    font: 'Poppins', // Establece la fuente a Poppins
-    y:{domain:[0,1100]},
-    marks: [
-      Plot.barY(top5Artists, {
-        x: 'artistName',
-        y: 'count',
-        sort: { x: "y", reverse: true },
-        fill: d => colorScale(d.artistName),
-      }),
-      Plot.image(top5Artists, {
-        x: d => d.artistName,
-        y: d => d.count-2.1, // Ajusta la posición vertical de las imágenes
-        src: d => getImageUrl(d.artistName),
-        height: 104, // Ajusta la altura de las imágenes
-        anchor: 'top', // Ancla las imágenes al centro
-      }),
-    ],
-  });
-
-  d3.select('#chart_solva_top_artistas').append(() => chart);
 });
