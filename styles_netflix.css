@@ -1,0 +1,142 @@
+@font-face {
+  font-family: "Netflix Sans";
+  src: url("../assets/fonts/NetflixSansRegular.ttf") format("truetype");
+}
+
+:root {
+  --white: #fff;
+  --white30: #ffffff4d;
+  --smokeWhite: #e5e5e5;
+  --hoveredGrey: #b3b3b3;
+  --midGray: #6d6d6eb2;
+  --gray: #808080;
+  --black: #141414;
+  --red: #b9090b;
+  background-color: var(--black);
+  overflow-x: hidden;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Netflix Sans", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  display: inline-block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.nav {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  background-color: var(--black);
+  font-size: 14px;
+  padding: 0 4%;
+  color: var(--smokeWhite);
+  box-shadow: inset 0 70px 65px -70px black;
+}
+
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.container__title {
+  font-size: max(20px, 3.5vw);
+  color: var(--white);
+}
+
+.container__elements {
+  color: var(--gray);
+  display: flex;
+  justify-content: center;
+  margin: 2em 0;
+  flex-wrap: wrap;
+}
+
+.container__element {
+  margin: 8px;
+  font-size: max(10px, 1.2vw);
+  margin: 0 2vw 0 0;
+}
+
+.container__element > span {
+  display: inline-block;
+  margin: 0.6em 0;
+}
+
+.container__img {
+  border-radius: 40px;
+  width: 20vw;
+  height: 20vw;
+  max-height: 200px;
+  max-width: 200px;
+  min-height: 84px;
+  min-width: 84px;
+  position: relative;
+  background-size: 150%;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 0 0 2px transparent;
+}
+
+.profile-1 {
+  width:600px;
+  background-image: url("imagenes/A5 - 1A5 - 1.png");
+}
+
+.profile-2 {
+  width:600px;
+  background-image: url("imagenes/A5 - 2A5 - 1.png");
+}
+
+.profile-3 {
+  width:600px;
+  background-image: url("imagenes/A5 - 3A5 - 1.png");
+}
+
+.profile-4 {
+  width:600px;
+  background-image: url("imagenes/junta.png");
+}
+
+.container__element:hover {
+  color: var(--white);
+}
+
+.container__element:hover > .container__img {
+  box-shadow: inset 0 0 0 2px var(--white);
+}
+
+.container__button {
+  border: 1px solid var(--gray);
+  cursor: pointer;
+  font-size: max(13px, 1.2vw);
+  letter-spacing: 2px;
+  margin: 2em auto 1em auto;
+  padding: 0.5em 1.5em;
+  color: var(--gray);
+}
+
+.container__button:hover {
+  border-color: var(--white);
+  color: var(--white);
+}
