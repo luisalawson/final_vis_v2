@@ -1,0 +1,75 @@
+/* Estilo para la tipografía similar a Spotify Wrapped */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+  
+  h2 {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+  
+  h3 {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+  
+  h4 {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+  
+  h5 {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  
+  h6 {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+  p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Estilo para los enlaces */
+  a {
+    color: #1DB954;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  a:hover {
+    color: #157F4C;
+  }
+  
+  /* Estilo para los títulos de la tabla */
+  .table th {
+    font-weight: 700;
+    color: #1DB954; /* Verde de Spotify */
+  }
+  
+  /* Estilo para el contenido de la tabla */
+  .table td {
+    font-weight: 400;
+    background-color: #f2f2f2; /* Gris claro */
+    color: #333; /* Color de texto oscuro */
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Fuente similar a Spotify */
+  }
+  

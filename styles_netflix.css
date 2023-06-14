@@ -140,3 +140,24 @@ a {
   border-color: var(--white);
   color: var(--white);
 }
+
+/* Estilo de tabla similar a Spotify */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table thead th {
+  background-color: #1db954;
+  color: white;
+  padding: 10px;
+  text-align: left;
+}
+
+.table tbody tr:nth-child(odd) {
+  background-color: #f6f6f6;
+}
+
+.table td {
+  padding: 10px;
+}
