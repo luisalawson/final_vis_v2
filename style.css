@@ -1,13 +1,13 @@
 /* Estilo para la tipografía similar a Spotify Wrapped */
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: "Gotham", sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.4;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: "Gotham", sans-serif;
     font-weight: 700;
     margin: 0;
     padding: 0;
@@ -75,11 +75,14 @@ body {
   font-family: "Gotham", sans-serif; /* Fuente Gotham */
 }
 #contains {
-  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+
 #contains div {
-  display: inline-block;
+  display: inline-flex;
   margin-right: 10px; /* Ajusta el espacio entre los elementos si es necesario */
 }
 

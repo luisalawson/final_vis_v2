@@ -13,7 +13,8 @@
   <script src="script_popularidad.js"></script>
   <script src="script_mes.js"></script>
   <script src="script_mapa.js"></script>
-  <script src="script_map_2.js"></script>
+
+
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Murecho&display=swap" rel="stylesheet">
 
@@ -27,15 +28,17 @@
   <div id="chart_popularidad_mixto"></div>
   <div id="chart"></div>
   
-  <div id="map"></div>
+  <div id="contains">
+    <div id="map"></div>
     <div id="nombre"></div>
     <div id="nacionalidad"></div>
     <div id="puesto_en_el_top"></div>
     <div id="en_el_top_de"></div>
     <div id="genero"></div>
-  
+</div>
+
 <script>
- 
+//llamo a mi funcion
 d3.csv("datos/datos_top_5 - Hoja 1.csv").then((data) => {
   plotWorldTour(Promise.resolve(data), "#map");
 });
