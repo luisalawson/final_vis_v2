@@ -74,3 +74,12 @@ body {
   font-size: 30px; /* Tamaño de fuente grande */
   font-family: "Gotham", sans-serif; /* Fuente Gotham */
 }
+#contains {
+  white-space: nowrap;
+}
+
+#contains div {
+  display: inline-block;
+  margin-right: 10px; /* Ajusta el espacio entre los elementos si es necesario */
+}
+

@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script src="https://cdn.jsdelivr.net/npm/htl@0.3.1/dist/htl.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
   <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.contentWindow.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.js"></script>
+  <script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js"></script>
   <script src="script_topArtistas.js"></script>
   <script src="script_tabla.js"></script>
   <script src="script_energy.js"></script>
   <script src="script_popularidad.js"></script>
-  <script src="scpript_mes.js"></script>
-  <link rel="stylesheet"  href="style.css">
+  <script src="script_mes.js"></script>
+  <script src="script_mapa.js"></script>
+  <script src="script_map_2.js"></script>
+  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Murecho&display=swap" rel="stylesheet">
 
   <title>Mi índice</title>
@@ -16,10 +22,23 @@
   </style>
 </head>
 <body>
-    <div id="chart_top_artistas"></div>
-    <div id="container"> </div>
-    <div id="chart_popularidad_mixto"> </div>
-    <div id="chart"></div>
-   <div id=" "></div>
+  <div id="chart_top_artistas"></div>
+  <div id="container"></div>
+  <div id="chart_popularidad_mixto"></div>
+  <div id="chart"></div>
+  
+  <div id="map"></div>
+    <div id="nombre"></div>
+    <div id="nacionalidad"></div>
+    <div id="puesto_en_el_top"></div>
+    <div id="en_el_top_de"></div>
+    <div id="genero"></div>
+  
+<script>
+ 
+d3.csv("datos/datos_top_5 - Hoja 1.csv").then((data) => {
+  plotWorldTour(Promise.resolve(data), "#map");
+});
+</script>
 </body>
 </html>

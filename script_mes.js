@@ -60,10 +60,14 @@ names.forEach((name, index) => {
       .attr('fill', d => d.data.value === maxHours ? '#1DB954' : 'gray'); // El mes con más horas escuchadas se muestra en rojo, los demás en gris
 
     arcs.append('text')
-      .attr('transform', d => 'translate(' + arc.centroid(d) + ')')
+      .attr('transform', d => {
+        const centroid = arc.centroid(d);
+        return 'translate(' + centroid[0] + ',' + centroid[1] + ')';
+      })
       .attr('text-anchor', 'middle')
       .attr('dy', '0.35em')
-      .style('font-size', '10px') // Establece el tamaño de fuente más pequeño
+      .style('font-size', d => d.data.value === maxHours ? '12px' : '0px')
+      .style('fill', d => d.data.value === maxHours ? 'white' : 'white')
       .text(d => d.data.month);
 
     svg.attr('transform', `translate(${index * (width + 100)}, 0)`); // Establece la posición horizontal del gráfico en función de su índice
