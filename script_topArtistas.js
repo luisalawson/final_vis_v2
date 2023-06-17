@@ -22,17 +22,20 @@ d3.csv('datos/datos_merge.csv', d3.autoType).then(data => {
 
     const colorScale = d3.scaleOrdinal()
       .domain(top5Artists.map(d => d.artistName))
-      .range(['#1DB954', '#E4E4E4', '#E4E4E4', '#E4E4E4', '#E4E4E4']);
+      .range(['#1DB954', '#c2c2c281', '#c2c2c281', '#c2c2c281', '#c2c2c281']);
 
     const chart = Plot.plot({
       style: {
         fontSize: 20,
         marginBottom: 20,
+        backgroundColor: "#2f2f2f",
+        color: "white",
+        fontFamily:"Gotham, sans-serif",
       },
       width: 1000, // Ajusta el ancho del gráfico según tus necesidades
       height: 800, // Ajusta la altura del gráfico según tus necesidades
       font: 'Poppins', // Establece la fuente a Poppins
-      y: { domain: [0, 35] },
+      y: { domain: [0, 35], label:'Horas escuchadas' },
       x:{label:''}
       ,
       marks: [

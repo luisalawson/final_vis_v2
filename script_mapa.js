@@ -28,13 +28,13 @@ async function plotWorldTour(dataPromise, divId) {
   const path = d3.geoPath(projection, context);
   function render(country, arc) {
     context.clearRect(0, 0, width, height);
-    context.beginPath(), path(land), (context.fillStyle = "#ccc"),
+    context.beginPath(), path(land), (context.fillStyle = "white"),
   context.fill();
     context.beginPath(), path(country), (context.fillStyle = "#1DB954"),
   context.fill();
-    context.beginPath(), path(borders), (context.strokeStyle = "#ccc"),
+    context.beginPath(), path(borders), (context.strokeStyle = "#2f2f2f;"),
 (context.lineWidth = 0.5), context.stroke();
-    context.beginPath(), path(outline), (context.strokeStyle = "#000"),
+    context.beginPath(), path(outline), (context.strokeStyle = "white"),
   (context.lineWidth = 1.5), context.stroke();
     context.beginPath(), path(arc), context.stroke();
     return context.canvas;
