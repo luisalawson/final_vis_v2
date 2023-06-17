@@ -309,3 +309,14 @@ body {
   font-family: 'Gotham', sans-serif;
   color: #939393;
 }
+
+
+.table th.column-title {
+  padding-right: 50px;
+  text-align: center;
+}
+
+
+
+
+

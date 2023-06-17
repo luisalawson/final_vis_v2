@@ -26,13 +26,25 @@ d3.csv('datos/datos_merge.csv', d3.autoType).then(data => {
   const table = tableDiv.append("table").classed("table", true).style("margin", "auto");
 
   /* Encabezado de la tabla */
-  table.append("thead")
-    .append("tr")
-    .selectAll("th")
-    .data(["", "Total artistas", "Total canciones", "Horas totales"])
-    .enter()
-    .append("th")
-    .text(d => d);
+  const thead = table.append("thead");
+  const headerRow = thead.append("tr");
+
+  headerRow.append("th")
+    .text("")
+    .classed("column-title", true);
+
+  headerRow.append("th")
+    .text("Total artistas")
+    .classed("column-title", true);
+
+  headerRow.append("th")
+    .text("Total canciones")
+    .classed("column-title", true);
+
+  headerRow.append("th")
+    .text("Horas totales")
+    .classed("column-title", true);
+
 
   /* Filas de la tabla */
   const rows = table.append("tbody")
@@ -43,12 +55,11 @@ d3.csv('datos/datos_merge.csv', d3.autoType).then(data => {
 
   /* Celdas de la tabla */
   rows.append("td")
-    .text(d => d);
+    .text(d => d)
   rows.append("td")
-    .text(d => artistCounts.get(d));
+    .text(d => artistCounts.get(d))
   rows.append("td")
     .text(d => songCounts.get(d));
   rows.append("td")
-    .text(d => Math.floor(hoursPlayed.get(d)));
+    .text(d => Math.floor(hoursPlayed.get(d)))
 });
-
