@@ -16,7 +16,12 @@ d3.csv('datos/datos_merge.csv', d3.autoType).then(data => {
       const colorScale = d3.scaleOrdinal()
         .domain(top5Songs.map(d => d.trackName))
         .range(['#1DB954', '#c2c2c281', '#c2c2c281', '#c2c2c281', '#c2c2c281']);
+
+        const colorScaletxt = d3.scaleOrdinal()
+        .domain(top5Songs.map(d => d.trackName))
+        .range(['#c2c2c281', '#1DB954', '#1DB954', '#1DB954', '#1DB954']);
   
+
       const chart = Plot.plot({
         style: {
           fontSize: 20,
@@ -55,16 +60,16 @@ d3.csv('datos/datos_merge.csv', d3.autoType).then(data => {
               text: d => d.trackName,
               textBaseline: 'middle',
               fontWeight: 'bold',
-              fontSize: (d, i) => (i === 0 ? 40 : 40), // Tamaño de fuente de 40 solo para el primer artista del top 5
-              fill: d => colorScale(d.trackName),
-              dx: 10, // Ajusta la posición del texto horizontalmente
-              dy: 0, // Ajusta la posición del texto verticalmente
+              fontSize: (d, i) => (i === 0 ? 40 : 40),
+              fill: 'white',
+              dx: -20,
+              dy: -5, // Ajusta este valor para que el texto esté en el medio literalmente
               font: 'Gotham sans-serif',
               paddingInner: 1,
-              textAnchor: 'start', // Alineación del texto a la izquierda
+              textAnchor: 'end',
               inside: true,
             }
-          )
+          )                   
         ],
       });
   
