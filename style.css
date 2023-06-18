@@ -26,8 +26,12 @@ body {
   margin-top: 10px;
 }
 
-#sec1, .chart-container-g1, .chart-container-g3, .chart-container-g4, .chart-container-g5, .chart-container-g6 {
+#sec1{
   margin-top: 150px; /* Ajusta el valor según sea necesario para evitar la superposición con la barra de navegación */
+
+}
+.chart-container-g1, .chart-container-g3, .chart-container-g4, .chart-container-g5, .chart-container-g6 {
+  margin-top: 10px; /* Ajusta el valor según sea necesario para evitar la superposición con la barra de navegación */
 }
 
 
