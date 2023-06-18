@@ -12,7 +12,8 @@
             backgroundColor: "#2f2f2f",
             color:"white"
           },
-          width: 400, // Ajusta el ancho del gráfico según tus necesidades
+          height: 500,
+          width: 500, // Ajusta el ancho del gráfico según tus necesidades
           y: { grid: true, domain:[0,1] },
           color: { legend: true },
           marks: [

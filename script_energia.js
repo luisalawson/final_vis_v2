@@ -5,7 +5,8 @@ d3.csv('datos/datos_merge.csv', d3.autoType).then(data => {
       const averageEnergy = d3.mean(grupo, d => d.energy); // Calcula el promedio de 'energy' para cada grupo
   
       const chart = Plot.plot({
-        width: 400, // Ajusta el ancho del gráfico según tus necesidades
+        height: 500,
+        width: 500, // Ajusta el ancho del gráfico según tus necesidades
         y: { grid: true, domain:[0,1] },
         style:{
           backgroundColor: "#2f2f2f",

@@ -12,8 +12,9 @@ d3.csv('datos/datos_merge.csv', d3.autoType).then(data => {
           backgroundColor: "#2f2f2f",
           color:"white"
         },
-        width: 400, // Ajusta el ancho del gráfico según tus necesidades
-        y: { grid: true, domain:[-26,0] },
+        height: 500,
+        width: 500, // Ajusta el ancho del gráfico según tus necesidades
+        y: { grid: true, domain:[-26,0], ticks:10 },
         color: { legend: true },
         marks: [
           Plot.dot(grupo, Plot.dodgeX("middle", { fx: "Nombre", y: "loudness", fill: "#1DB954" })),
