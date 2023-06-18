@@ -21,7 +21,7 @@ d3.csv('datos/datos_merge.csv', d3.autoType).then(data => {
       return chart;
     });
   
-    const container = d3.select('#chart_popularidad_mixto')
+    const container = d3.select('#chart_energia_mixto')
       .style('display', 'flex')
       .style('gap', '20px'); // Espacio entre los gráficos
   
