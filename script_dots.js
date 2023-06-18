@@ -25,37 +25,43 @@ Promise.all([
 
   const svg = d3.select("#chart_dots")
     .append("svg")
-    .attr("width", 1000) // Ajusta el ancho del gráfico según tus necesidades
+    .attr("width", 800) // Ajusta el ancho del gráfico según tus necesidades
     .attr("height", 500); // Ajusta la altura del gráfico según tus necesidades
 
   svg.selectAll("circle")
     .data(pointsData)
     .enter()
     .append("circle")
-    .attr("cx", (_, i) => (i % squareSize) * 20 + 10) // Espaciado horizontal entre los puntos y compensación para centrarlos
+    .attr("cx", (_, i) => (i % squareSize) * 30) // Espaciado horizontal entre los puntos y compensación para centrarlos
     .attr("cy", (_, i) => Math.floor(i / squareSize) * 20 + 10) // Espaciado vertical entre los puntos y compensación para centrarlos
     .attr("r", 5) // Tamaño fijo de los puntos
     .attr("fill", d => d.color); // Color de los puntos según el dataset
 
   const legend = svg.append("g")
-    .attr("transform", "translate(500, 10)"); // Posición de la leyenda
+    .attr("transform", "translate(600, 10)"); // Posición de la leyenda
 
-  legend.selectAll("rect")
-    .data(datasets)
-    .enter()
-    .append("rect")
-    .attr("x", 0)
-    .attr("y", (_, i) => i * 30) // Espaciado vertical entre los elementos de la leyenda
-    .attr("width", 20)
-    .attr("height", 20)
-    .attr("fill", (_, i) => colors[i]); // Color de cada elemento de la leyenda
+
 
   legend.selectAll("text")
     .data(names)
     .enter()
     .append("text")
-    .attr("x", 30) // Espaciado horizontal entre el rectángulo y el texto
-    .attr("y", (_, i) => i * 30 + 15) // Espaciado vertical entre los elementos de la leyenda y compensación para el texto
-    .text(d => d) // Nombre del dataset
-    .attr("fill", "white"); // Color del texto
+
+
+  // Textos al costado del gráfico
+  const sidebar = svg.append("g")
+    .attr("transform", "translate(500, 20)"); // Posición del sidebar
+
+  sidebar.selectAll("text")
+    .data([
+      { name: "Luisa", hours: 254 },
+      { name: "Sol", hours: 111 },
+      { name: "Olivia", hours: 94 }
+    ])
+    .enter()
+    .append("text")
+    .attr("x", 0)
+    .attr("y", (_, i) => i * 30) // Espaciado vertical entre los textos en el sidebar
+    .text(d => `${d.name}: ${d.hours} horas`)
+    .attr("fill", (_, i) => colors[i]); // Color del texto según el dataset
 });
