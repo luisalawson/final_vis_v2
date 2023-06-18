@@ -15,6 +15,9 @@
   <script src="script_bailabilidad.js"></script>
   <script src="script_dots.js"></script>
   <script src="script_topCanciones.js"></script>
+  <script src="script_loudness.js"></script>
+  <script src="script_liveness.js"></script>
+  <script src="script_popularidad.js"></script>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Murecho&display=swap" rel="stylesheet">
   <title>Mi índice</title>
@@ -65,40 +68,36 @@
   <p> ¡Wow! Luisa se lleva la corona con 253 horas dedicadas a la música, mientras que Sol suma 120 horas y Olivia se contenta con 94 horas. Parece que Luisa aprecia la música con pasión o simplemente tiene un montón de tiempo libre o se olvido de apagar el reproductor de Spotify. Igualmente, al final lo importante es disfrutar de la música sin importar la cantidad de horas invertidas.</p>
 </div>
 
-<div id="sec3">
-<div id="chart_dots" class="chart-container-g5"></div>
-</div>
 
 
 <div class="slideshow-container">
 
   <div class="mySlides fade">
+    <h2> ¿Que tan enegeticas son las canciones? </h2>
     <div id="chart_energia_mixto" class="chart-container-g3"></div>
   </div>
 
   <div class="mySlides fade">
+    <h2> ¿Que tan bailables son las canciones? </h2>
     <div id="chart_danceability_mixto" class="chart-container-g4"></div>
   </div>
 
   <div class="mySlides fade">
-    <img src="img3.jpg" style="width:100%">
-    <div class="text">Caption Three</div>
+    <h2> ¿Que tan ruidosas son las canciones? </h2>
+    <div id="chart_loudness_mixto" class="chart-container-g5"></div>
   </div>
 
   <div class="mySlides fade">
-    <img src="img3.jpg" style="width:100%">
-    <div class="text">Caption Three</div>
+    <h2> ¿Cuanta musica en vivo escuchan? </h2>
+    <div id="chart_liveness_mixto" class="chart-container-g7"></div>
   </div>
 
-  <div class="mySlides fade">
-    <img src="img3.jpg" style="width:100%">
-    <div class="text">Caption Three</div>
-  </div>
 
   <div class="mySlides fade">
-    <img src="img3.jpg" style="width:100%">
-    <div class="text">Caption Three</div>
+    <h2> ¿Que tan populares son las canciones? </h2>
+    <div id="chart_popularidad_mixto" class="chart-container-g7"></div>
   </div>
+
 
   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
   <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -111,7 +110,7 @@
   <span class="dot" onclick="currentSlide(3)"></span>
   <span class="dot" onclick="currentSlide(4)"></span>
   <span class="dot" onclick="currentSlide(5)"></span>
-  <span class="dot" onclick="currentSlide(6)"></span>
+ 
 
 </div>
 

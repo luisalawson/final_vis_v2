@@ -30,7 +30,7 @@ body {
   margin-top: 150px; /* Ajusta el valor según sea necesario para evitar la superposición con la barra de navegación */
 
 }
-.chart-container-g1, .chart-container-g3, .chart-container-g4, .chart-container-g5, .chart-container-g6 {
+.chart-container-g1, .chart-container-g3, .chart-container-g4, .chart-container-g5, .chart-container-g6, .chart-container-g7 {
   margin-top: 10px; /* Ajusta el valor según sea necesario para evitar la superposición con la barra de navegación */
 }
 
@@ -58,6 +58,7 @@ body {
     margin: 0;
     padding: 0;
   }
+
   
   h1 {
     font-size: 32px;
@@ -68,6 +69,8 @@ body {
   h2 {
     font-size: 24px;
     line-height: 1.3;
+    color: #939393;
+    text-align: center; 
   }
   
   h3 {
@@ -220,6 +223,7 @@ body {
   max-width: 1000px;
   position: relative;
   margin: auto;
+  margin-top: 50px;
 }
 
 .mySlides {
