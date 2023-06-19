@@ -1,39 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Spotiflix-Analytics</title>
-    <link rel="icon" href="imagenes/logo.png" type="image/x-icon" />
-    <link rel="stylesheet" href="styles_netflix.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Murecho&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <nav class="nav">
-    </nav>
-    <main class="container">
-      <h1 class="container__title">¿Qué perfil quieren ver?</h1>
-      <div class="container__elements">
-        <a class="container__element" href="index8.html">
-          <div class="container__img profile-1"></div>
-          <span>Luisa</span>
-        </a>
-        <a class="container__element" href="index9.html">
-          <div class="container__img profile-2"></div>
-          <span>Sol</span>
-        </a>
-        <a class="container__element" href="index10.html">
-          <div class="container__img profile-3"></div>
+<html>
+<head>
+  <title>Inicio de Spotify</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
 
-          <span>Olivia</span>
-        </a>
-        <a class="container__element" href="index7.html">
-          <div class="container__img profile-4"></div>
-          <span>Las 3</span>
-        </a>
-      </div>
-      <a class="container__button" href="#">Administrar perfiles</a>
-    </main>
-  </body>
+    .container {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .container h1 {
+      margin-top: 150px;
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: whitesmoke;
+    }
+
+    .container p {
+      text-align: center;
+      margin-left: 20%;
+      margin-right: 20%;
+      margin-top:1%;
+      margin-bottom:1%;
+      font-size: 20px;
+      font-family: 'Gotham', sans-serif;
+      color: #939393;
+    }
+
+    .container button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #1DB954;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .container button:hover {
+      background-color: #1ED760;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <img src="imagenes/Spotify_Logo_RGB_White.png" alt="logo Spotify">
+    <a href="Anlaytics">Analytics</a>
+  </div>
+
+  <div class="container">
+    <h1>Elija estos amigos grupo para hacer el Spotify Match</h1>
+    <p>Spotify Match es una función emocionante que compara tus datos de canciones con los de tus amigos, revelando similitudes y diferencias en tus gustos musicales. Descubre nuevas canciones y artistas mientras exploras cómo tu música se conecta con la de tus amigos en una experiencia interactiva y divertida.</p>
+    <button style="background-color: #1DB954;" onclick="window.location.href='index.html'">Comenzar Spotify Match</button>
+  </div>
+</body>
 </html>
