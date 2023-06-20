@@ -26,12 +26,28 @@ body {
   margin-top: 10px;
 }
 
-#sec1{
+#sec0{
   margin-top: 150px; /* Ajusta el valor según sea necesario para evitar la superposición con la barra de navegación */
 
 }
+
+#nombres_columnas {
+  display: flex;
+  justify-content: space-between;
+}
+
+#nombres_columnas h2 {
+  flex: 1;
+  color: #ddd;
+}
+
 .chart-container-g1, .chart-container-g3, .chart-container-g4, .chart-container-g5, .chart-container-g6, .chart-container-g7 {
   margin-top: 10px; /* Ajusta el valor según sea necesario para evitar la superposición con la barra de navegación */
+}
+
+.chart_dots text{
+  font-size: 30px;
+  font-family: 'Gotham' sans-serif;
 }
 
 
@@ -366,8 +382,8 @@ body {
   color: #939393;
 }
 
-
-
-
-
-
+.mySlides.fade h2{
+  color:#1DB954;
+  margin-bottom:1%;
+  font-size: 30px;
+}

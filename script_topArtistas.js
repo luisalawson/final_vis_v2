@@ -54,7 +54,7 @@ d3.csv('datos/datos_merge.csv', d3.autoType).then(data => {
         showAxis: false // Oculta el eje Y
       },
       x: {
-        label: '',
+        label: " ",
         ticks: 0,
         tickFormat: () => '', // Elimina los ticks del eje X
         showAxis: false, // Oculta el eje X

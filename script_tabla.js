@@ -41,11 +41,6 @@ d3.csv('datos/datos_merge.csv', d3.autoType).then(data => {
     .text("Total canciones")
     .classed("column-title", true);
 
-  headerRow.append("th")
-    .text("Horas totales")
-    .classed("column-title", true);
-
-
   /* Filas de la tabla */
   const rows = table.append("tbody")
     .selectAll("tr")
@@ -60,6 +55,4 @@ d3.csv('datos/datos_merge.csv', d3.autoType).then(data => {
     .text(d => artistCounts.get(d))
   rows.append("td")
     .text(d => songCounts.get(d));
-  rows.append("td")
-    .text(d => Math.floor(hoursPlayed.get(d)))
 });
