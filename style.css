@@ -61,10 +61,12 @@ body {
   margin-right: 30px;
   margin-top: 10px;
   font-size: 20px;
+  font-family: 'Gotham' sans-serif;
+
 }
 
 .navbar a:hover {
-  background: #ddd;
+  background: #1DB954;
   color: black;
 }
 
@@ -219,6 +221,25 @@ body {
   display: block;
   margin-bottom: 10px;
 }
+#boton {
+  display: flex;
+  justify-content: center;
+  background-color: #1DB954;
+  height:100px
+
+}
+
+#btn {
+  margin-top: 20px;
+  width: 100%;
+
+  border-color: #1DB954;
+  background-color: #1DB954;
+  color: #ddd;
+  font-size: 20px;
+  font-family: 'Gotham', sans-serif;
+}
+
 
 #btnSintesis{
   margin-top: 20px;
