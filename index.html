@@ -67,7 +67,7 @@
 
     </div>
 
-     <!-- <button id="btnSintesis">Síntesis</button>
+     <button id="btnSintesis">Síntesis</button>
         <div id="map-container">
           <div id="map" style="display: none;"></div>
           <div id="text-container" style="display: none;">
@@ -78,7 +78,7 @@
             <div id="genero"></div>
           </div>
         </div>
-       -->
+      
 <div id="sec4">
   <h1> Analizando las pistas</h1>
   <p> Luisa y Olivia compiten en energía y bailabilidad, mientras que Sol se relaja con canciones más tranquilas. En cuanto al ruido, todos prefieren mantenerlo bajo. En cuanto a música en vivo, todos prefieren escuchar en casa. Y en popularidad, Sol se lleva el primer puesto y Luisa y Olivia van por musica más original... aunque no tanto.</p>
@@ -161,15 +161,15 @@
     plotWorldTour(Promise.resolve(data), "#map");
   });
 
-  // const btnSintesis = document.getElementById("btnSintesis");
-  // const map = document.getElementById("map");
-  // const textContainer = document.getElementById("text-container");
+  const btnSintesis = document.getElementById("btnSintesis");
+  const map = document.getElementById("map");
+  const textContainer = document.getElementById("text-container");
 
-  // btnSintesis.addEventListener("click", function() {
-  //   // Mostrar u ocultar el gráfico y los textos
-  //   map.style.display = map.style.display === "none" ? "block" : "none";
-  //   textContainer.style.display = textContainer.style.display === "none" ? "block" : "none";
-  // });
+  btnSintesis.addEventListener("click", function() {
+    // Mostrar u ocultar el gráfico y los textos
+    map.style.display = map.style.display === "none" ? "block" : "none";
+    textContainer.style.display = textContainer.style.display === "none" ? "block" : "none";
+  });
 
   let slideIndex = 1;
   showSlides(slideIndex);

@@ -34,7 +34,7 @@ async function plotWorldTour(dataPromise, divId) {
   context.fill();
     context.beginPath(), path(borders), (context.strokeStyle = "#2f2f2f;"),
 (context.lineWidth = 0.5), context.stroke();
-    context.beginPath(), path(outline), (context.strokeStyle = "white"),
+    context.beginPath(), path(outline), (context.strokeStyle = "2f2f2f"),
   (context.lineWidth = 1.5), context.stroke();
     context.beginPath(), path(arc), context.stroke();
     return context.canvas;
