@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <script src="https://cdn.jsdelivr.net/npm/htl@0.3.1/dist/htl.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
@@ -23,139 +24,193 @@
   <title>Mi índice</title>
   <style>
   </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+    <video id="miVideo" autoplay>
+      <source src="imagenes\gif.mp4" type="video/mp4">
+    </video>
+    <button id="startButton" style="background-color: #1DB954;" onclick="window.location.href='index.html'">Comenzar Spotify Match</button>
+  </div>
+
+  <script>
+    var video = document.getElementById("miVideo");
+    var startButton = document.getElementById("startButton");
+
+    video.addEventListener("loadedmetadata", function() {
+      this.playbackRate = 0.75;
+    });
+
+    video.addEventListener("ended", function() {
+      startButton.style.display = "block"; // Muestra el botón cuando el video ha terminado
+    });
+  </script>
   
-  </head>
-    <body>
-      <div class="navbar">
-        <img src="imagenes/Spotify_Logo_RGB_White.png" alt="logo Spotify">
-        <a href="index_playlist.html">Ver NUESTRO MIX</a>
-      </div>
+  <div class="navbar">
+    <img src="imagenes/Spotify_Logo_RGB_White.png" alt="logo Spotify">
+    <a href="index_playlist.html">Ver NUESTRO MIX</a>
+  </div>
 
-      <div id="sec0">
-        <h1> Dedicacion a la musica</h1>
-        <p> ¡Wow! Luisa se lleva la corona con 253 horas dedicadas a la música, mientras que Sol suma 120 horas y Olivia se contenta con 94 horas. Parece que Luisa aprecia la música con pasión o simplemente tiene un montón de tiempo libre o se olvido de apagar el reproductor de Spotify. Igualmente, al final lo importante es disfrutar de la música sin importar la cantidad de horas invertidas.</p>
-        <div id="chart_dots" class="chart-container-g2"> </div>
-      </div>
-      
-     <div id="sec1">
-      <h1> ¿Comparten el amor por la música?</h1>
-      <p> Luisa, una exploradora incansable del mundo musical, se deleitó con 651 canciones de 334 artistas. Su pasión por descubrir nuevos sonidos es inigualable. En contraste, Sol, con su enfoque único, encontró la perfección en 147 canciones de solo 111 artistas. Cada canción que elige tiene un significado profundo para ella. Y luego está Olivia, cuyo oído selectivo la llevó a disfrutar de la exquisitez de 243 canciones de 132 artistas. Cada canción seleccionada por Olivia es un verdadero tesoro en su colección musical. Tres oyentes, tres estilos, pero un amor compartido por la música en todas sus formas.</p>
-      <div id="container" class="chart-container-g2"> </div>
-    </div>
+  <div id="sec1">
+    <div class="espacio_1"> </div>
+    <h1> ¿Comparten el amor por la música?</h1>
+    <p> Luisa, una exploradora incansable del mundo musical, se deleitó con 651 canciones de 334 artistas. Su pasión por
+      descubrir nuevos sonidos es inigualable. En contraste, Sol, con su enfoque único, encontró la perfección en 147
+      canciones de solo 111 artistas. Cada canción que elige tiene un significado profundo para ella. Y luego está
+      Olivia, cuyo oído selectivo la llevó a disfrutar de la exquisitez de 243 canciones de 132 artistas. Cada canción
+      seleccionada por Olivia es un verdadero tesoro en su colección musical. Tres oyentes, tres estilos, pero un amor
+      compartido por la música en todas sus formas.</p>
+    <div id="container" class="chart-container-g2"> </div>
+    <div class="espacio_1"> </div>
+  </div>
 
-      
-     <div id="sec2">
-      <h1> ¿Coincidirán en el TOP 5?</h1>
-      <p> ¡Atención! Resulta que Olivia y Luisa comparten muchos artistas en su top 5, ¡Hasta tienen el mismo artista en el primer puesto! ¿Quien será la fan mas fiel de WOS? Y luego tenemos a Sol... quien parece tener un radar musical único, porque no comparte ni un solo artista con sus amigas. En definitiva, hay un trío musical con sus propias historias únicas. </p>
-      <div id="nombres_columnas"> 
+
+
+  <div id="sec0">
+    <div class="espacio_0"> </div>
+    <h1> Dedicacion a la musica</h1>
+    <p> ¡Wow! Luisa se lleva la corona con 253 horas dedicadas a la música, mientras que Sol suma 120 horas y Olivia se
+      contenta con 94 horas. Parece que Luisa aprecia la música con pasión o simplemente tiene un montón de tiempo libre
+      o se olvido de apagar el reproductor de Spotify. Igualmente, al final lo importante es disfrutar de la música sin
+      importar la cantidad de horas invertidas.</p>
+    <div id="chart_dots" class="chart-container-g2"> </div>
+    <div class="espacio_0"> </div>
+  </div>
+
+
+  <div id="sec2">
+    <div class="espacio_2"> </div>
+    <h1> ¿Coincidirán en el TOP 5?</h1>
+    <p> ¡Atención! Resulta que Olivia y Luisa comparten muchos artistas en su top 5, ¡Hasta tienen el mismo artista en
+      el primer puesto! ¿Quien será la fan mas fiel de WOS? Y luego tenemos a Sol... quien parece tener un radar musical
+      único, porque no comparte ni un solo artista con sus amigas. En definitiva, hay un trío musical con sus propias
+      historias únicas. </p>
+    <div class="contenedor">
+      <div id="nombres_columnas">
         <h2> Luisa </h2>
         <h2> Olivia </h2>
         <h2> Sol </h2>
       </div>
       <div id="chart_top_artistas" class="chart-container-g1"></div>
     </div>
+    <div class="espacio_2"> </div>
+  </div>
 
-     <div id="sec3">
-      <h1> Y que hay de sus canciones favoritas?</h1>
-      <p> Parece que Luisa y Olivia tienen un gusto musical tan similar que hasta podrían compartir un par de audífonos sin perder el ritmo. Incluso llegaron a competir por ver quién ponía "ARRANCARMELO" primero en su lista, ¡parece que les gusta arrancar la música a todo volumen! Mientras tanto, Sol está en su propia galaxia musical, explorando planetas desconocidos con canciones como "Marte". Parece que Sol no tiene miedo de estar "Not sad anymore" y está listo para "SNAP"earse los dedos al ritmo de su propia melodía. En definitiva, estos tres tienen estilos únicos, pero la música los une en un cóctel de sonidos divertidos y creativos. </p>
-      <div id="nombres_columnas"> 
+  <div id="sec3">
+    <div class="espacio_3"> </div>
+    <h1> Y que hay de sus canciones favoritas?</h1>
+    <p> Parece que Luisa y Olivia tienen un gusto musical tan similar que hasta podrían compartir un par de audífonos
+      sin perder el ritmo. Incluso llegaron a competir por ver quién ponía "ARRANCARMELO" primero en su lista, ¡parece
+      que les gusta arrancar la música a todo volumen! Mientras tanto, Sol está en su propia galaxia musical, explorando
+      planetas desconocidos con canciones como "Marte". Parece que Sol no tiene miedo de estar "Not sad anymore" y está
+      listo para "SNAP"earse los dedos al ritmo de su propia melodía. En definitiva, estos tres tienen estilos únicos,
+      pero la música los une en un cóctel de sonidos divertidos y creativos. </p>
+    <div class="contenedor">
+      <div id="nombres_columnas">
         <h2> Luisa </h2>
         <h2> Olivia </h2>
         <h2> Sol </h2>
       </div>
       <div id="chart_top_canciones" class="chart-container-g6"></div>
-
     </div>
-
-     <button id="btnSintesis">Síntesis</button>
-        <div id="map-container">
-          <div id="map" style="display: none;"></div>
-          <div id="text-container" style="display: none;">
-            <div id="nombre"></div>
-            <div id="nacionalidad"></div>
-            <div id="puesto_en_el_top"></div>
-            <div id="en_el_top_de"></div>
-            <div id="genero"></div>
-          </div>
-        </div>
-      
-<div id="sec4">
-  <h1> Analizando las pistas</h1>
-  <p> Luisa y Olivia compiten en energía y bailabilidad, mientras que Sol se relaja con canciones más tranquilas. En cuanto al ruido, todos prefieren mantenerlo bajo. En cuanto a música en vivo, todos prefieren escuchar en casa. Y en popularidad, Sol se lleva el primer puesto y Luisa y Olivia van por musica más original... aunque no tanto.</p>
-</div>
-
-<div class="slideshow-container">
-
-  <div class="mySlides fade">
-    <h2> ¿Que tan energeticas son las canciones? </h2>
-    <div id="nombres_columnas"> 
-      <h2> Luisa </h2>
-      <h2> Olivia </h2>
-      <h2> Sol </h2>
+    <button id="btnSintesis">Síntesis</button>
+    <div id="map-container">
+      <div id="map" style="display: none;"></div>
+      <div id="text-container" style="display: none;">
+        <div id="nombre"></div>
+        <div id="nacionalidad"></div>
+        <div id="puesto_en_el_top"></div>
+        <div id="en_el_top_de"></div>
+        <div id="genero"></div>
+      </div>
     </div>
-    <div id="chart_energia_mixto" class="chart-container-g3"></div>
-  </div>
-
-  <div class="mySlides fade">
-    <h2> ¿Que tan bailables son las canciones? </h2>
-    <div id="nombres_columnas"> 
-      <h2> Luisa </h2>
-      <h2> Olivia </h2>
-      <h2> Sol </h2>
-    </div>
-    <div id="chart_danceability_mixto" class="chart-container-g4"></div>
-  </div>
-
-  <div class="mySlides fade">
-    <h2> ¿Que tan ruidosas son las canciones? </h2>
-    <div id="nombres_columnas"> 
-      <h2> Luisa </h2>
-      <h2> Olivia </h2>
-      <h2> Sol </h2>
-    </div>
-    <div id="chart_loudness_mixto" class="chart-container-g5"></div>
-  </div>
-
-  <div class="mySlides fade">
-    <h2> ¿Cuanta musica en vivo escuchan? </h2>
-    <div id="nombres_columnas"> 
-      <h2> Luisa </h2>
-      <h2> Olivia </h2>
-      <h2> Sol </h2>
-    </div>
-    <div id="chart_liveness_mixto" class="chart-container-g7"></div>
+    <div class="espacio_3"> </div>
   </div>
 
 
-  <div class="mySlides fade">
-    <h2> ¿Que tan populares son las canciones? </h2>
-    <div id="nombres_columnas"> 
-      <h2> Luisa </h2>
-      <h2> Olivia </h2>
-      <h2> Sol </h2>
-    </div>
-    <div id="chart_popularidad_mixto" class="chart-container-g7"></div>
+  <div id="sec4">
+    <div class="espacio_4"> </div>
+    <h1> Analizando las pistas</h1>
+    <p> Luisa y Olivia compiten en energía y bailabilidad, mientras que Sol se relaja con canciones más tranquilas. En
+      cuanto al ruido, todos prefieren mantenerlo bajo. En cuanto a música en vivo, todos prefieren escuchar en casa. Y
+      en popularidad, Sol se lleva el primer puesto y Luisa y Olivia van por musica más original... aunque no tanto.</p>
   </div>
 
+  <div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <h2> ¿Que tan energeticas son las canciones? </h2>
+      <div id="nombres_columnas">
+        <h2> Luisa </h2>
+        <h2> Olivia </h2>
+        <h2> Sol </h2>
+      </div>
+      <div id="chart_energia_mixto" class="chart-container-g3"></div>
+    </div>
+
+    <div class="mySlides fade">
+      <h2> ¿Que tan bailables son las canciones? </h2>
+      <div id="nombres_columnas">
+        <h2> Luisa </h2>
+        <h2> Olivia </h2>
+        <h2> Sol </h2>
+      </div>
+      <div id="chart_danceability_mixto" class="chart-container-g4"></div>
+    </div>
+
+    <div class="mySlides fade">
+      <h2> ¿Que tan ruidosas son las canciones? </h2>
+      <div id="nombres_columnas">
+        <h2> Luisa </h2>
+        <h2> Olivia </h2>
+        <h2> Sol </h2>
+      </div>
+      <div id="chart_loudness_mixto" class="chart-container-g5"></div>
+    </div>
+
+    <div class="mySlides fade">
+      <h2> ¿Cuanta musica en vivo escuchan? </h2>
+      <div id="nombres_columnas">
+        <h2> Luisa </h2>
+        <h2> Olivia </h2>
+        <h2> Sol </h2>
+      </div>
+      <div id="chart_liveness_mixto" class="chart-container-g7"></div>
+    </div>
+
+
+    <div class="mySlides fade">
+      <h2> ¿Que tan populares son las canciones? </h2>
+      <div id="nombres_columnas">
+        <h2> Luisa </h2>
+        <h2> Olivia </h2>
+        <h2> Sol </h2>
+      </div>
+      <div id="chart_popularidad_mixto" class="chart-container-g7"></div>
+    </div>
 
 
 
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-</div>
-<br>
 
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
-  <span class="dot" onclick="currentSlide(4)"></span>
-  <span class="dot" onclick="currentSlide(5)"></span>
- 
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
 
-</div>
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span>
 
-<!-- <div id = "boton">
+
+  </div>
+
+  <!-- <div id = "boton">
   <button id="btn">Su mix esta listo!</button>
 </div> -->
 
@@ -172,7 +227,7 @@
   const map = document.getElementById("map");
   const textContainer = document.getElementById("text-container");
 
-  btnSintesis.addEventListener("click", function() {
+  btnSintesis.addEventListener("click", function () {
     // Mostrar u ocultar el gráfico y los textos
     map.style.display = map.style.display === "none" ? "block" : "none";
     textContainer.style.display = textContainer.style.display === "none" ? "block" : "none";
@@ -195,17 +250,18 @@
     let i;
     let slides = document.getElementsByClassName("mySlides");
     let dots = document.getElementsByClassName("dot");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
     for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
     }
     for (i = 0; i < dots.length; i++) {
       dots[i].className = dots[i].className.replace(" active", "");
     }
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
   }
 
 </script>
+
 </html>

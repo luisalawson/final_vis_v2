@@ -3,20 +3,55 @@ body {
     font-weight: 400;
     font-size: 16px;
     line-height: 1.4;
-    background-color: #2f2f2f;
+    background-color: #000000;
     max-width: 100%; /* Establece el ancho máximo de la página */
     overflow-x: hidden; /* Bloquea el desplazamiento horizontal */
 
 
   }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+
+.container button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #1DB954;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: none; /* Oculta inicialmente el botón */
+  font-family: 'Lexend', sans-serif; /* Aplica la fuente Lexend */
+  height: 60px;
+}
+
+.container button:hover {
+  background-color: #1ED760;
+}
+
+#miVideo {
+  width: 100%; /* Ajusta el ancho del video según tus necesidades */
+  height: 550px; /* Ajusta la altura del video según tus necesidades */
+  object-fit: cover; /* Permite que la altura se ajuste automáticamente según el ancho */
+  object-position: bottom;
+  filter: brightness(0.98);
+  margin: 0 auto;
+}
+
 .navbar {
   overflow: hidden;
-  background-color: #2f2f2f;
+  background-color: #000000;
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
-  height: 10vh;
+  height: 15vh;
 }
 .navbar img {
   max-width: 100%;
@@ -24,30 +59,6 @@ body {
   float: left;
   margin-left: 30px;
   margin-top: 10px;
-}
-
-#sec0{
-  margin-top: 150px; /* Ajusta el valor según sea necesario para evitar la superposición con la barra de navegación */
-
-}
-
-#nombres_columnas {
-  display: flex;
-  justify-content: space-between;
-}
-
-#nombres_columnas h2 {
-  flex: 1;
-  color: #ddd;
-}
-
-.chart-container-g1, .chart-container-g3, .chart-container-g4, .chart-container-g5, .chart-container-g6, .chart-container-g7 {
-  margin-top: 10px; /* Ajusta el valor según sea necesario para evitar la superposición con la barra de navegación */
-}
-
-.chart_dots text{
-  font-size: 30px;
-  font-family: 'Gotham' sans-serif;
 }
 
 
@@ -58,7 +69,6 @@ body {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  margin-right: 30px;
   margin-top: 10px;
   font-size: 20px;
   font-family: 'Gotham' sans-serif;
@@ -67,8 +77,58 @@ body {
 
 .navbar a:hover {
   background: #1DB954;
-  color: black;
+  color:#ddd;
 }
+
+#sec0{
+  margin-top: 30px;
+   /* Ajusta el valor según sea necesario para evitar la superposición con la barra de navegación */
+  background-color: #000000;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#sec0 h1{
+  color: #f2ff48;
+}
+
+
+#sec0 p {
+  text-align: center;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top:1%;
+  margin-bottom:1%;
+  font-size: 20px;
+  font-family: 'Gotham', sans-serif;
+  color: #f2ff48;
+}
+
+
+#nombres_columnas {
+  display: flex;
+  justify-content: space-between;
+}
+
+#nombres_columnas h2 {
+  flex: 1;
+  color: white;
+}
+
+.chart-container-g1, .chart-container-g3, .chart-container-g4, .chart-container-g5, .chart-container-g6, .chart-container-g7 {
+  margin-top: 10px; /* Ajusta el valor según sea necesario para evitar la superposición con la barra de navegación */
+}
+
+.contenedor{
+  padding: 5%;
+}
+
+.chart_dots text{
+  font-size: 30px;
+  font-family: 'Gotham' sans-serif;
+}
+
 
   h1, h2, h3, h4, h5, h6 {
     font-family: "Gotham", sans-serif;
@@ -87,7 +147,7 @@ body {
   h2 {
     font-size: 24px;
     line-height: 1.3;
-    color: #939393;
+    color: white;
     text-align: center; 
   }
   
@@ -117,7 +177,7 @@ body {
   }
   
   a {
-    color: #1DB954;
+    color: #f2f2f2;
     text-decoration: none;
     transition: color 0.2s ease;
   }
@@ -128,13 +188,13 @@ body {
   
 .table th {
   font-weight: 700;
-  color: #1DB954; /* Verde de Spotify */
+  color: #6900ba; /* Verde de Spotify */
   font-size: 30px; /* Tamaño de fuente grande */
 }
 
 .table td {
   font-weight: 900;
-  color: #727272; /* Color de texto oscuro */
+  color: #6900ba; /* Color de texto oscuro */
   text-align: center; /* Centrar números */
   font-size: 30px; /* Tamaño de fuente grande */
   font-family: "Gotham", sans-serif; /* Fuente Gotham */
@@ -152,7 +212,7 @@ body {
 
 
 #en_el_top_de, #nombre, #nacionalidad, #puesto_en_el_top, #genero {
-  color: #1DB954; /* Cambia el color de la fuente a blanco */
+  color: #000000; /* Cambia el color de la fuente a blanco */
   /* Estilos de los textos */
   font-size: 16px;
   line-height: 1.4;
@@ -161,14 +221,20 @@ body {
 }
 
 #sec1{
+  margin-top: 100px;
   align-items: center;
   justify-content: center;
   text-align: center;
+  background-color: #f2ff48;
+  margin-bottom: 30px;
+  overflow: auto;
+
 }
+
 
 #sec1 h1 {
   text-align: center;
-  color:#ddd
+  color: #6900ba;
 }
 #sec1 p {
   text-align: center;
@@ -178,18 +244,31 @@ body {
   margin-bottom:1%;
   font-size: 20px;
   font-family: 'Gotham', sans-serif;
-  color: #939393;
+  color: #6900ba;
 }
+
+.espacio_1 {
+     /* Hereda el color de fondo del contenedor */
+     content: "";
+     height: 50px;
+}
+
+.espacio_2 {
+     /* Hereda el color de fondo del contenedor */
+     content: "";
+     height: 50px;
+}
+
 #sec2{
   align-items: center;
   justify-content: center;
   text-align: center;
+  background-color: #6900ba;
 }
 
 #sec2 h1 {
-  margin-top: 80px;
   text-align: center;
-  color:#ddd
+  color:#f2f2f2;
 }
 #sec2 p {
   text-align: center;
@@ -199,7 +278,7 @@ body {
   margin-bottom:1%;
   font-size: 20px;
   font-family: 'Gotham', sans-serif;
-  color: #939393;
+  color: #f2f2f2;
 }
 
 #map-container {
@@ -215,6 +294,7 @@ body {
 
 #text-container {
   flex: 1;
+
 }
 
 #text-container div {
@@ -232,7 +312,6 @@ body {
 #btn {
   margin-top: 20px;
   width: 100%;
-
   border-color: #1DB954;
   background-color: #1DB954;
   color: #ddd;
@@ -250,7 +329,7 @@ body {
   color:#ddd ;
   font-size: 20px;
   font-family: 'Gotham' sans-serif;
-  margin-left: 42%;
+  margin-bottom: 20px;
 }
 
 
@@ -333,16 +412,26 @@ body {
   from {opacity: .4}
   to {opacity: 1}
 }
+.espacio_3 {
+   /* Hereda el color de fondo del contenedor */
+  content: " ";
+  height: 50px;
+}
+
+
 
 #sec3{
   align-items: center;
   justify-content: center;
   text-align: center;
+  background-color: #ec6dbf;
+
 }
+
 
 #sec3 h1 {
   text-align: center;
-  color:#ddd
+  color: #000000;
 }
 #sec3 p {
   text-align: center;
@@ -352,7 +441,7 @@ body {
   margin-bottom:1%;
   font-size: 20px;
   font-family: 'Gotham', sans-serif;
-  color: #939393;
+  color: #000000;
 }
 
 
@@ -363,14 +452,21 @@ body {
 
 
 #sec4{
+  margin-top: 30px;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
 
+.espacio_4{
+     /* Hereda el color de fondo del contenedor */
+     content: "";
+     height: 50px;
+}
+
 #sec4 h1 {
   text-align: center;
-  color:#ddd
+  color:#f2ff48;
 }
 #sec4 p {
   text-align: center;
@@ -382,29 +478,10 @@ body {
   font-family: 'Gotham', sans-serif;
   color: #939393;
 }
-#sec0{
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
 
-#sec0 h1 {
-  text-align: center;
-  color:#ddd
-}
-#sec0 p {
-  text-align: center;
-  margin-left: 20%;
-  margin-right: 20%;
-  margin-top:1%;
-  margin-bottom:1%;
-  font-size: 20px;
-  font-family: 'Gotham', sans-serif;
-  color: #939393;
-}
 
 .mySlides.fade h2{
-  color:#1DB954;
+  color:#f2ff48;
   margin-bottom:1%;
   font-size: 30px;
 }

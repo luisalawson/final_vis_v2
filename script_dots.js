@@ -4,7 +4,7 @@ Promise.all([
   d3.csv("datos/datos_actualizados_OLIVIA.csv", d3.autoType)
 ]).then(([dataLuisa, dataOlivia, dataSolva]) => {
   const datasets = [dataLuisa, dataOlivia, dataSolva];
-  const colors = ["#1DB954", "white", "#1DADB9"]; // Colores para cada dataset
+  const colors = ["#ec6dbf", "#6900ba", "white"]; // Colores para cada dataset
   const names = ["Luisa", "Olivia", "Sol"]; // Nombres de los datasets
 
   const totalHoursArr = datasets.map(data =>
