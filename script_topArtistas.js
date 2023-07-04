@@ -50,6 +50,7 @@ d3.csv('datos/datos_merge.csv', d3.autoType).then(data => {
         //ticks: 0,
         label: '',
         domain: [0, 35],
+      
         //tickFormat: () => '', // Elimina los ticks del eje Y
         //showAxis: false // Oculta el eje Y
       },
@@ -63,6 +64,7 @@ d3.csv('datos/datos_merge.csv', d3.autoType).then(data => {
         Plot.barY(top5Artists, {
           x: 'artistName',
           y: 'sum',
+          tip: "x",
           sort: { x: "y", reverse: true },
           fill: d => colorScale(d.artistName),
           paddingInner: 1, 

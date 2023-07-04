@@ -261,6 +261,18 @@
     dots[slideIndex - 1].className += " active";
   }
 
+  function showTooltip(d) {
+  const tooltip = d3.select("#tooltip");
+  tooltip.style("display", "block")
+    .style("left", d3.event.pageX + 10 + "px")
+    .style("top", d3.event.pageY + 10 + "px")
+    .html(`${d.artistName}: ${d.sum.toFixed(2)} horas`);
+}
+
+function hideTooltip() {
+  d3.select("#tooltip").style("display", "none");
+}
+
 </script>
 
 </html>
