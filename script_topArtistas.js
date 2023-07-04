@@ -19,7 +19,7 @@ d3.csv('datos/datos_merge.csv', d3.autoType).then(data => {
         if(d.artistName === "Tate McRae") {
           return "Tate" + "\n" + "McRae";
         }
-        else {
+         else {
           return d.artistName;
         }
       }
@@ -35,24 +35,29 @@ d3.csv('datos/datos_merge.csv', d3.autoType).then(data => {
       .range(['#1DB954', '#c2c2c281', '#c2c2c281', '#c2c2c281', '#c2c2c281']);
 
     const chart = Plot.plot({
+      
       style: {
         fontSize: 20,
         marginBottom: 20,
         backgroundColor: "#6900ba",
-        fontFamily: "Gotham, sans-serif",
+        //color: "2f2f2f",
+        fontFamily:"Gotham, sans-serif",
       },
-      width: 1000,
-      height: 800,
-      font: 'Gotham sans-serif',
+      width: 1000, // Ajusta el ancho del gráfico según tus necesidades
+      height: 800, // Ajusta la altura del gráfico según tus necesidades
+      font: 'Gotham sans-serif', // Establece la fuente a Poppins
       y: {
+        //ticks: 0,
         label: '',
         domain: [0, 35],
+        //tickFormat: () => '', // Elimina los ticks del eje Y
+        //showAxis: false // Oculta el eje Y
       },
       x: {
         label: " ",
         ticks: 0,
-        tickFormat: () => '',
-        showAxis: false,
+        tickFormat: () => '', // Elimina los ticks del eje X
+        showAxis: false, // Oculta el eje X
       },
       marks: [
         Plot.barY(top5Artists, {
@@ -60,53 +65,34 @@ d3.csv('datos/datos_merge.csv', d3.autoType).then(data => {
           y: 'sum',
           sort: { x: "y", reverse: true },
           fill: d => colorScale(d.artistName),
-          paddingInner: 1,
+          paddingInner: 1, 
         }),
         Plot.text(
-          top5Artists, {
+          top5Artists,{
             x: 'artistName',
             y: 'sum',
-            text: d => d.artistName,
-            textBaseline: 'middle',
-            fontWeight: 'bold',
-            fontSize: (d, i) => (i === 0 ? 40 : 40),
+            text: d => d.artistName, 
+            textBaseline: 'middle', 
+            fontWeight: 'bold', 
+            fontSize: (d, i) => (i === 0 ? 40 : 40), // Tamaño de fuente de 40 solo para el primer artista del top 5
             fill: d => colorScale(d.artistName),
-            dx: 0,
-            dy: -40,
-            font: 'Gotham sans-serif',
-            paddingInner: 1,
+            dx: 0, 
+            dy: -40, 
+            font: 'Gotham sans-serif', 
+            paddingInner: 1, 
+
           }
         )
       ],
     });
-
-    // Agregar interacción con el mouse
-    const tooltip = container.append('div')
-      .attr('class', 'tooltip')
-      .style('opacity', 0);
-
-    const bars = chart.marks[0];
-
-    bars.on('mouseover', (event, datum) => {
-      tooltip.transition()
-        .duration(200)
-        .style('opacity', .9);
-      tooltip.html(datum.sum)
-        .style('left', (event.pageX) + 'px')
-        .style('top', (event.pageY - 28) + 'px');
-    })
-    .on('mouseout', () => {
-      tooltip.transition()
-        .duration(500)
-        .style('opacity', 0);
-    });
+    
 
     return chart;
   });
 
   const container = d3.select('#chart_top_artistas')
     .style('display', 'flex')
-    .style('gap', '30px');
+    .style('gap', '30px'); // Espacio entre los gráficos
 
   charts.forEach(chart => {
     container.append(() => chart);
