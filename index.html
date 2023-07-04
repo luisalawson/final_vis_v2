@@ -29,30 +29,29 @@
 
 <body>
 
+  <div class="navbar">
+    <img src="imagenes/Spotify_Logo_RGB_White.png" alt="logo Spotify">
+    <a href="index_playlist.html">Ver NUESTRO MIX</a>
+  </div>
+
   <div class="container">
-    <video id="miVideo" autoplay>
-      <source src="imagenes\gif.mp4" type="video/mp4">
+    <video id="miVideo" autoplay muted>
+      <source src="imagenes/gif.mp4" type="video/mp4">
     </video>
-    <button id="startButton" style="background-color: #1DB954;" onclick="window.location.href='index.html'">Comenzar Spotify Match</button>
   </div>
 
   <script>
     var video = document.getElementById("miVideo");
     var startButton = document.getElementById("startButton");
 
-    video.addEventListener("loadedmetadata", function() {
-      this.playbackRate = 0.75;
+    video.addEventListener("canplaythrough", function () {
+      this.play(); // Inicia la reproducción del video cuando esté listo para cargar completamente
     });
 
-    video.addEventListener("ended", function() {
-      startButton.style.display = "block"; // Muestra el botón cuando el video ha terminado
-    });
+
   </script>
-  
-  <div class="navbar">
-    <img src="imagenes/Spotify_Logo_RGB_White.png" alt="logo Spotify">
-    <a href="index_playlist.html">Ver NUESTRO MIX</a>
-  </div>
+
+
 
   <div id="sec1">
     <div class="espacio_1"> </div>
@@ -89,7 +88,7 @@
       único, porque no comparte ni un solo artista con sus amigas. En definitiva, hay un trío musical con sus propias
       historias únicas. </p>
     <div class="contenedor">
-      <div id="nombres_columnas">
+      <div id="nombres_columnas1">
         <h2> Luisa </h2>
         <h2> Olivia </h2>
         <h2> Sol </h2>
@@ -109,7 +108,7 @@
       listo para "SNAP"earse los dedos al ritmo de su propia melodía. En definitiva, estos tres tienen estilos únicos,
       pero la música los une en un cóctel de sonidos divertidos y creativos. </p>
     <div class="contenedor">
-      <div id="nombres_columnas">
+      <div id="nombres_columnas2">
         <h2> Luisa </h2>
         <h2> Olivia </h2>
         <h2> Sol </h2>
@@ -143,7 +142,7 @@
 
     <div class="mySlides fade">
       <h2> ¿Que tan energeticas son las canciones? </h2>
-      <div id="nombres_columnas">
+      <div id="nombres_columnas3">
         <h2> Luisa </h2>
         <h2> Olivia </h2>
         <h2> Sol </h2>
@@ -153,7 +152,7 @@
 
     <div class="mySlides fade">
       <h2> ¿Que tan bailables son las canciones? </h2>
-      <div id="nombres_columnas">
+      <div id="nombres_columnas3">
         <h2> Luisa </h2>
         <h2> Olivia </h2>
         <h2> Sol </h2>
@@ -163,7 +162,7 @@
 
     <div class="mySlides fade">
       <h2> ¿Que tan ruidosas son las canciones? </h2>
-      <div id="nombres_columnas">
+      <div id="nombres_columnas3">
         <h2> Luisa </h2>
         <h2> Olivia </h2>
         <h2> Sol </h2>
@@ -173,7 +172,7 @@
 
     <div class="mySlides fade">
       <h2> ¿Cuanta musica en vivo escuchan? </h2>
-      <div id="nombres_columnas">
+      <div id="nombres_columnas3">
         <h2> Luisa </h2>
         <h2> Olivia </h2>
         <h2> Sol </h2>
@@ -184,7 +183,7 @@
 
     <div class="mySlides fade">
       <h2> ¿Que tan populares son las canciones? </h2>
-      <div id="nombres_columnas">
+      <div id="nombres_columnas3">
         <h2> Luisa </h2>
         <h2> Olivia </h2>
         <h2> Sol </h2>

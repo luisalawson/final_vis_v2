@@ -26,7 +26,7 @@ d3.csv('datos/datos_merge.csv', d3.autoType).then(data => {
         style: {
           fontSize: 20,
           marginBottom: 20,
-          backgroundColor: "#2f2f2f",
+          backgroundColor: "#ec6dbf",
           color: "2f2f2f",
           fontFamily: "Gotham, sans-serif",
         },
@@ -61,7 +61,7 @@ d3.csv('datos/datos_merge.csv', d3.autoType).then(data => {
               textBaseline: 'middle',
               fontWeight: 'bold',
               fontSize: (d, i) => (i === 0 ? 40 : 40),
-              fill: '#ddd',
+              fill: '#000000',
               dx: -20,
               dy: -5, // Ajusta este valor para que el texto esté en el medio literalmente
               font: 'Gotham sans-serif',

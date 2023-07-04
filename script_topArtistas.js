@@ -39,7 +39,7 @@ d3.csv('datos/datos_merge.csv', d3.autoType).then(data => {
       style: {
         fontSize: 20,
         marginBottom: 20,
-        backgroundColor: "#2f2f2f",
+        backgroundColor: "#6900ba",
         color: "2f2f2f",
         fontFamily:"Gotham, sans-serif",
       },

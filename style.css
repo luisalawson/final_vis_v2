@@ -106,15 +106,27 @@ body {
 }
 
 
-#nombres_columnas {
+#nombres_columnas1, #nombres_columnas2, #nombres_columnas3 {
   display: flex;
   justify-content: space-between;
 }
 
-#nombres_columnas h2 {
+#nombres_columnas1 h2 {
   flex: 1;
   color: white;
 }
+
+
+#nombres_columnas2 h2 {
+  flex: 1;
+  color: #000000;
+}
+
+
+#nombres_columnas3 h2 {
+  color: #f2ff48;
+}
+
 
 .chart-container-g1, .chart-container-g3, .chart-container-g4, .chart-container-g5, .chart-container-g6, .chart-container-g7 {
   margin-top: 10px; /* Ajusta el valor según sea necesario para evitar la superposición con la barra de navegación */
@@ -222,15 +234,19 @@ body {
 
 #sec1{
   margin-top: 100px;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex;
   text-align: center;
   background-color: #f2ff48;
   margin-bottom: 30px;
-  overflow: auto;
 
 }
+.izquierda{
+  flex:1;
+}
 
+.derecha{
+  flex:1;
+}
 
 #sec1 h1 {
   text-align: center;
