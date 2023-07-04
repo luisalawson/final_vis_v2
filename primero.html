@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Elegí a quién hacerle match</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background-color: black;
+    }
+
+    h1 {
+      margin-top: 50px;
+      color: white;
+    }
+
+    .circle {
+      display: inline-block;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background-color: #eaeaea;
+      margin: 30px;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .circle:hover {
+      opacity: 0.7;
+    }
+
+    .button {
+      margin-top: 30px;
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #4287f5;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: #1c69e8;
+    }
+
+    /* Estilos para el modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: white(0, 0, 0, 0.7);
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 10% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+
+    .modal-close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .modal-close:hover,
+    .modal-close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Elegí a quién hacerle match</h1>
+  <div>
+    <div class="circle" onclick="openModal(1)">
+      <img id="photo1" src="imagenes/default.png" alt="Foto 1" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <div class="circle" onclick="openModal(2)">
+      <img id="photo2" src="imagenes/default.png" alt="Foto 2" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <div class="circle" onclick="openModal(3)">
+      <img id="photo3" src="imagenes/default.png" alt="Foto 3" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+  </div>
+  <button class="button" onclick="window.location.href = 'index.html'">Ver match</button>
+
+
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal()">&times;</span>
+      <h2>Selecciona una imagen:</h2>
+      <div id="modalOptions">
+        <img src="imagenes/A5 - 1A5 - 1.png" alt="Opción 1" width="200" onclick="selectOption(1)">
+        <img src="imagenes/A5 - 2A5 - 1.png" alt="Opción 2" width="200" onclick="selectOption(2)">
+        <img src="imagenes/A5 - 3A5 - 1.png" alt="Opción 3" width="200" onclick="selectOption(3)">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let selectedPhoto = 0;
+
+    function openModal(photoNumber) {
+      selectedPhoto = photoNumber;
+      let modal = document.getElementById("myModal");
+      modal.style.display = "block";
+    }
+
+    function closeModal() {
+      selectedPhoto = 0;
+      let modal = document.getElementById("myModal");
+      modal.style.display = "none";
+    }
+
+    function selectOption(optionNumber) {
+      console.log("Opción seleccionada: " + optionNumber);
+      let circleId = "photo" + selectedPhoto;
+      let circle = document.getElementById(circleId);
+      let optionImg = document.querySelector("#modalOptions img:nth-child(" + optionNumber + ")");
+      circle.src = optionImg.src;
+      closeModal();
+    }
+
+    function verMatch() {
+      if (selectedPhoto !== 0) {
+        console.log("¡Has hecho match con la foto " + selectedPhoto + "!");
+      } else {
+        console.log("Selecciona una foto antes de ver el match.");
+      }
+    }
+  </script>
+</body>
+
+</html>
