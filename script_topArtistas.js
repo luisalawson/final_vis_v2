@@ -33,17 +33,17 @@ d3.csv('datos/datos_merge.csv', d3.autoType).then(data => {
       if (nombre === "Luisa") {
         colorScale = d3.scaleOrdinal()
           .domain(top5Artists.map(d => d.artistName))
-          .range(['#7E2AC5', '#F2F2F2', '#F2F2F2', '#F2F2F2', '#F2F2F2']);
+          .range(['#7E2AC5', '#666666', '#666666', '#666666', '#666666']);
   
       } else if (nombre === "Olivia") {
         colorScale = d3.scaleOrdinal()
           .domain(top5Artists.map(d => d.artistName))
-          .range(['#D23A6D', '#F2F2F2', '#F2F2F2', '#F2F2F2', '#F2F2F2']);
+          .range(['#D23A6D', '#666666', '#666666', '#666666', '#666666']);
 
       } else if (nombre === "Sol") {
         colorScale = d3.scaleOrdinal()
           .domain(top5Artists.map(d => d.artistName))
-          .range(['#3FB89B', '#F2F2F2', '#F2F2F2', '#F2F2F2', '#F2F2F2']);
+          .range(['#3FB89B', '#666666', '#666666', '#666666', '#666666']);
   
       }
     const chart = Plot.plot({
@@ -51,7 +51,7 @@ d3.csv('datos/datos_merge.csv', d3.autoType).then(data => {
       style: {
         fontSize: 20,
         marginBottom: 20,
-        backgroundColor: "#ffc267",
+        backgroundColor: "#e0e0e0",
         color: "2f2f2f",
         fontFamily:"Gotham, sans-serif",
       },
