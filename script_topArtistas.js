@@ -40,19 +40,19 @@ d3.csv('datos/datos_merge.csv', d3.autoType).then(data => {
         fontSize: 20,
         marginBottom: 20,
         backgroundColor: "#6900ba",
-        //color: "2f2f2f",
+        color: "2f2f2f",
         fontFamily:"Gotham, sans-serif",
       },
       width: 1000, // Ajusta el ancho del gráfico según tus necesidades
       height: 800, // Ajusta la altura del gráfico según tus necesidades
       font: 'Gotham sans-serif', // Establece la fuente a Poppins
       y: {
-        //ticks: 0,
+        ticks: 0,
         label: '',
-        domain: [0, 35],
+        domain: [0, 40],
       
-        //tickFormat: () => '', // Elimina los ticks del eje Y
-        //showAxis: false // Oculta el eje Y
+        tickFormat: () => '', // Elimina los ticks del eje Y
+        showAxis: false // Oculta el eje Y
       },
       x: {
         label: " ",
@@ -79,10 +79,25 @@ d3.csv('datos/datos_merge.csv', d3.autoType).then(data => {
             fontSize: (d, i) => (i === 0 ? 40 : 40), // Tamaño de fuente de 40 solo para el primer artista del top 5
             fill: d => colorScale(d.artistName),
             dx: 0, 
-            dy: -40, 
+            dy: -100, 
             font: 'Gotham sans-serif', 
             paddingInner: 1, 
 
+          }
+        ),
+        Plot.text(
+          top5Artists, {
+            x: d => d.artistName, // Posición horizontal del centro de cada barra
+            y: d => d.sum, // Posición vertical del centro de cada barra
+            text: d => `${d.sum.toFixed(1)} hrs`, // Texto a mostrar (horas)
+            textBaseline: 'middle', // Alineación vertical en el centro de la barra
+            fontWeight: 'bold', // Estilo de fuente en negrita
+            fontSize: (d, i) => (i === 0 ? 40 : 40), // Tamaño de fuente (40 para el primer artista, 40 para los demás)
+            fill: d => colorScale(d.artistName),
+            dx: 0,
+            dy: -40,
+            font: 'Gotham sans-serif',
+            paddingInner: 1,
           }
         )
       ],
