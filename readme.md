@@ -1,3 +1,5 @@
+Olivia Nicholson, Luisa Lawson y Sol Valeggia
+
 Aclaraciones para visualizacion:
 - para que se vea la playlist de blend se tiene que iniciar sesion en spotify
 - en este link se podra ver el manejo de la pagina correcta por cualquier problema : https://drive.google.com/file/d/1O2DGWlxmS9wVlQjgUWHJrwBBlZiqTFHy/view?usp=sharing
