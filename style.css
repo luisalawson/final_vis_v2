@@ -219,14 +219,14 @@ body {
 .table th {
   font-weight: 700;
   color: #6900ba; /* Verde de Spotify */
-  color: #effc3d;
+  color: #6900ba;
   font-size: 30px; /* Tamaño de fuente grande */
 }
 
 .table td {
   font-weight: 900;
   color: #6900ba; /* Color de texto oscuro */
-  color: #effc3d;
+  color: #6900ba;
   text-align: center; /* Centrar números */
   font-size: 30px; /* Tamaño de fuente grande */
   font-family: "Gotham", sans-serif; /* Fuente Gotham */
@@ -257,8 +257,8 @@ body {
   justify-content: flex;
   text-align: center;
 
-  background-color: #effc3d;
   background-color: #6900ba;
+  background-color: #effc3d;
   margin-bottom: 30px;
 
 }
@@ -272,8 +272,8 @@ body {
 
 #sec1 h1 {
   text-align: center;
-  color: #6900ba;
   color: #effc3d;
+  color: #6900ba;
 }
 #sec1 p {
   text-align: center;
@@ -283,7 +283,7 @@ body {
   margin-bottom:1%;
   font-size: 20px;
   font-family: 'Gotham', sans-serif;
-  color: #edeed3;
+  color: #1d1d1d;
 }
 
 .espacio_1 {
@@ -307,7 +307,7 @@ body {
 
 #sec2 h1 {
   text-align: center;
-  color:#666666;
+  color:#000000;
 }
 
 #sec2 p {
@@ -318,7 +318,7 @@ body {
   margin-bottom:1%;
   font-size: 20px;
   font-family: 'Gotham', sans-serif;
-  color: #666666;
+  color: #000000;
 }
 
 #map-container {
