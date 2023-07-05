@@ -142,7 +142,7 @@ body {
 
 
 #nombres_columnas3 h2 {
-  color: #f2ff48;
+  color: #a6ae30;
 }
 
 
@@ -297,12 +297,12 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: #fab44a;
+  background-color: #ffc267;
 }
 
 #sec2 h1 {
   text-align: center;
-  color:#666666;
+  color:rgb(53, 53, 53);
 }
 
 #sec2 p {
@@ -313,7 +313,7 @@ body {
   margin-bottom:1%;
   font-size: 20px;
   font-family: 'Gotham', sans-serif;
-  color: #666666;
+  color: #747474;
 }
 
 #map-container {
