@@ -30,16 +30,28 @@ d3.csv('datos/datos_merge.csv', d3.autoType).then(data => {
       .sort((a, b) => b.sum - a.sum)
       .slice(0, 5);
 
-    const colorScale = d3.scaleOrdinal()
-      .domain(top5Artists.map(d => d.artistName))
-      .range(['#1DB954', '#c2c2c281', '#c2c2c281', '#c2c2c281', '#c2c2c281']);
+      if (nombre === "Luisa") {
+        colorScale = d3.scaleOrdinal()
+          .domain(top5Artists.map(d => d.artistName))
+          .range(['#7E2AC5', '#666666', '#666666', '#666666', '#666666']);
+  
+      } else if (nombre === "Olivia") {
+        colorScale = d3.scaleOrdinal()
+          .domain(top5Artists.map(d => d.artistName))
+          .range(['#D23A6D', '#666666', '#666666', '#666666', '#666666']);
 
+      } else if (nombre === "Sol") {
+        colorScale = d3.scaleOrdinal()
+          .domain(top5Artists.map(d => d.artistName))
+          .range(['#3FB89B', '#666666', '#666666', '#666666', '#666666']);
+  
+      }
     const chart = Plot.plot({
       
       style: {
         fontSize: 20,
         marginBottom: 20,
-        backgroundColor: "#6900ba",
+        backgroundColor: "#e0e0e0",
         color: "2f2f2f",
         fontFamily:"Gotham, sans-serif",
       },
