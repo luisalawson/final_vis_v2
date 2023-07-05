@@ -1,7 +1,7 @@
 Aclaraciones para visualizacion:
 - para que se vea la playlist de blend se tiene que iniciar sesion en spotify
 - en este link se podra ver el manejo de la pagina correcta por cualquier problema : https://drive.google.com/file/d/1O2DGWlxmS9wVlQjgUWHJrwBBlZiqTFHy/view?usp=sharing
-
+- El primer html usado es primero.html y después se sigue a la otra pagina que es index.html y la página de la playlist blend es index_playlist.html
 
 Explicación de la página web:
 
@@ -24,6 +24,3 @@ Optamos por mantener la misma estructura de gráfico, pero eliminamos el color v
 5. No se notaban en los gráficos de barras las cantidades
 Agregamos dichas cantidades
 
-Aclaraciones:
-
-El primer html usado es primero.html y después se sigue a la otra pagina que es index.html y la página de la playlist blend es index_playlist.html
