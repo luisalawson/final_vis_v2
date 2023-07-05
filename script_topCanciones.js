@@ -26,7 +26,7 @@ d3.csv('datos/datos_merge.csv', d3.autoType).then(data => {
         style: {
           fontSize: 20,
           marginBottom: 20,
-          backgroundColor: "#ec6dbf",
+          backgroundColor: "#BD28B4",
           color: "2f2f2f",
           fontFamily: "Gotham, sans-serif",
         },
@@ -41,6 +41,8 @@ d3.csv('datos/datos_merge.csv', d3.autoType).then(data => {
         },
         x: {
           label: '',
+          ticks: 0,
+
           domain: [0, d3.max(top5Songs, d => d.sum) * 1.1], // Ajusta el factor de multiplicación según tus necesidades
           tickFormat: () => '', // Elimina los ticks del eje X
           showAxis: false, // Oculta el eje X
@@ -69,7 +71,25 @@ d3.csv('datos/datos_merge.csv', d3.autoType).then(data => {
               textAnchor: 'end',
               inside: true,
             }
-          )                   
+          )  ,
+          Plot.text(
+            top5Songs, {
+              x: d => d.sum, // Posición X en función de la cantidad de horas
+              y: 'trackName',
+              text: d => d.sum.toFixed(1) + 'hs', // Mostrar solo un decimal
+              textBaseline: 'middle',
+              fontWeight: 'bold',
+              fontSize: (d, i) => (i === 0 ? 40 : 40),
+              fill: d => colorScale(d.trackName),
+              dx: 2, // Ajusta este valor para el espacio entre la barra y el texto
+              dy: 0,
+              font: 'Gotham sans-serif',
+              paddingInner: 1,
+              textAnchor: 'start', // Alinea el texto a la izquierda
+              inside: true,
+            }
+          )
+                            
         ],
       });
   
@@ -78,7 +98,7 @@ d3.csv('datos/datos_merge.csv', d3.autoType).then(data => {
   
     const container = d3.select('#chart_top_canciones')
       .style('display', 'flex')
-      .style('gap', '30px'); // Espacio entre los gráficos
+      .style('gap', '40px'); // Espacio entre los gráficos
   
     charts.forEach(chart => {
       container.append(() => chart);

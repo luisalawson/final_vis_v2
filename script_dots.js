@@ -28,11 +28,12 @@ Promise.all([
 
   const svg = d3.select("#chart_dots")
     .append("svg")
-    .attr("width", containerWidth) // Utiliza el ancho del contenedor
+    .attr("width", 500 ) // Ajusta el ancho del SVG para incluir el margen izquierdo
     .attr("height", 500) // Ajusta la altura del gráfico según tus necesidades
-    .style("padding-left", marginLeft + "px"); // Agrega el margen izquierdo
 
-  svg.selectAll("circle")
+  svg.append("g")
+    .attr("transform", "translate(" + marginLeft + ", 0)") // Agrega el margen izquierdo
+    .selectAll("circle")
     .data(pointsData)
     .enter()
     .append("circle")
@@ -40,5 +41,4 @@ Promise.all([
     .attr("cy", (_, i) => Math.floor(i / squareSize) * 20 + 10) // Espaciado vertical entre los puntos y compensación para centrarlos
     .attr("r", 5) // Tamaño fijo de los puntos
     .attr("fill", d => d.color); // Color de los puntos según el dataset
-
 });
