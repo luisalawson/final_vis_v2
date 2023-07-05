@@ -79,31 +79,45 @@ body {
   background: #1DB954;
   color:#ddd;
 }
-
-#sec0{
+#sec0 {
   margin-top: 30px;
-   /* Ajusta el valor según sea necesario para evitar la superposición con la barra de navegación */
   background-color: #000000;
-  align-items: center;
+  display: flex;
   justify-content: center;
-  text-align: center;
+  align-items: flex-start;
 }
 
-#sec0 h1{
+#sec0 .content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+}
+
+#sec0 .text {
+  flex: 1;
+  margin-right: 20px;
+}
+
+#sec0 h1 {
   color: #f2ff48;
+  text-align: left;
 }
-
 
 #sec0 p {
-  text-align: center;
-  margin-left: 20%;
-  margin-right: 20%;
-  margin-top:1%;
-  margin-bottom:1%;
+  text-align: left;
+  margin-top: 1%;
+  margin-bottom: 1%;
   font-size: 20px;
   font-family: 'Gotham', sans-serif;
   color: #f2ff48;
 }
+
+.chart-container-g2 {
+  flex: 1;
+}
+
 
 
 #nombres_columnas1, #nombres_columnas2, #nombres_columnas3 {
