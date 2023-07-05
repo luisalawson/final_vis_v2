@@ -41,30 +41,4 @@ Promise.all([
     .attr("r", 5) // Tamaño fijo de los puntos
     .attr("fill", d => d.color); // Color de los puntos según el dataset
 
-  const legend = svg.append("g")
-    .attr("transform", "translate(500, 10)"); // Posición de la leyenda
-
-  legend.selectAll("text")
-    .data(names)
-    .enter()
-    .append("text")
-
-  // Textos al costado del gráfico
-  const sidebar = svg.append("g")
-    .attr("transform", "translate(650, 20)"); // Posición del sidebar
-
-  sidebar.selectAll("text")
-    .data([
-      { name: "Luisa", hours: 254 },
-      { name: "Sol", hours: 120 },
-      { name: "Olivia", hours: 94 }
-    ])
-    .enter()
-    .append("text")
-    .attr("font-family", "Gotham, sans-serif") // Establece la fuente de los textos
-    .attr("font-size", "20px") // Establece el tamaño de los textos
-    .attr("x", 0)
-    .attr("y", (_, i) => i * 30) // Espaciado vertical entre los textos en el sidebar
-    .text(d => `${d.name}: ${d.hours} horas`)
-    .attr("fill", (_, i) => colors[i]); // Color del texto según el dataset
 });

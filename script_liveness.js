@@ -7,7 +7,7 @@ d3.csv('datos/datos_merge.csv', d3.autoType).then(data => {
   
       const chart3 = Plot.plot({
         style:{
-          backgroundColor: "#2f2f2f",
+          backgroundColor: "#000000",
           color:"white"
         },
         height: 500,
@@ -15,7 +15,7 @@ d3.csv('datos/datos_merge.csv', d3.autoType).then(data => {
         y: { grid: true, domain:[0,1],ticks:5 },
         color: { legend: true },
         marks: [
-          Plot.dot(grupo, Plot.dodgeX("middle", { fx: "Nombre", y: "liveness", fill: "#1DB954" })),
+          Plot.dot(grupo, Plot.dodgeX("middle", { fx: "Nombre", y: "liveness", fill: "#999999" })),
           Plot.ruleY([averageLiveness], { stroke: "red" }) // Agrega la línea roja en el promedio de 'energy' para cada grupo
         ]
       });

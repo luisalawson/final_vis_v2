@@ -9,12 +9,12 @@ d3.csv('datos/datos_merge.csv', d3.autoType).then(data => {
         width: 500, // Ajusta el ancho del gráfico según tus necesidades
         y: { grid: true, domain:[0,1] },
         style:{
-          backgroundColor: "#2f2f2f",
+          backgroundColor: "#000000",
           color:"white"
         },
         color: { legend: true },
         marks: [
-          Plot.dot(grupo, Plot.dodgeX("middle", { fx: "Nombre", y: "energy", fill: "#1DB954" })),
+          Plot.dot(grupo, Plot.dodgeX("middle", { fx: "Nombre", y: "energy", fill: "#999999" })),
           Plot.ruleY([averageEnergy], { stroke: "red" }) // Agrega la línea roja en el promedio de 'energy' para cada grupo
         ]
       });

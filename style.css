@@ -89,9 +89,9 @@ body {
 
 #sec0 .content {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -114,11 +114,14 @@ body {
   color: #f2ff48;
 }
 
+
 .chart-container-g2 {
   flex: 1;
 }
 
-
+.chart_dots{
+  margin-left: 300px;
+}
 
 #nombres_columnas1, #nombres_columnas2, #nombres_columnas3 {
   display: flex;
