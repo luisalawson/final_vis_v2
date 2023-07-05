@@ -25,4 +25,5 @@ Optamos por mantener la misma estructura de gráfico, pero eliminamos el color v
 Agregamos dichas cantidades
 
 Aclaraciones:
+
 El primer html usado es primero.html y después se sigue a la otra pagina que es index.html y la página de la playlist blend es index_playlist.html
