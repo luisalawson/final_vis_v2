@@ -15,7 +15,7 @@ d3.csv('datos/datos_merge.csv', d3.autoType).then(data => {
         color: { legend: true },
         marks: [
           Plot.dot(grupo, Plot.dodgeX("middle", { fx: "Nombre", y: "energy", fill: "#999999" })),
-          Plot.ruleY([averageEnergy], { stroke: "red" }) // Agrega la línea roja en el promedio de 'energy' para cada grupo
+          Plot.ruleY([averageEnergy], { stroke: "red", strokeWidth: 4 }) // Agrega la línea roja en el promedio de 'energy' para cada grupo
         ]
       });
   
