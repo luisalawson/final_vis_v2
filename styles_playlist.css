@@ -7,7 +7,6 @@ body {
   max-width: 100%; /* Establece el ancho máximo de la página */
   overflow-x: hidden; /* Bloquea el desplazamiento horizontal */
 
-
   }
   
 #sec3{
@@ -20,6 +19,12 @@ body {
 #sec3 h1 {
   text-align: center;
   color:#f2ff48
+}
+
+#sec3 h3 {
+  margin-left: 30px;
+  color:#f2ff48
+  
 }
 #sec3 p {
   text-align: center;
